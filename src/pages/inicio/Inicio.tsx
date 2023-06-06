@@ -19,7 +19,7 @@ export default function Inicio() {
 
   return (
     <>
-        <Box mt='20px' p={10}>
+        <Box mt='20px' p={10} w='100%'>
             <Center>
                 <Heading mb='25px' as='i' size='sm'>¿Quieres conocer el estado de las elecciones 23J?</Heading>
             </Center>
