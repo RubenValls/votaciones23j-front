@@ -10,6 +10,7 @@ import { GiVote } from 'react-icons/gi';
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
+import { CiMenuKebab } from "react-icons/ci";
 
 const pages = [
     {name:"Inicio", path:"/"}, {name:"Votos y estadísticas", path:"/votos"}, {name:"Sobre la web", path:"/web"}
@@ -33,7 +34,7 @@ function Navbar() {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" style={{marginLeft:0}}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -41,7 +42,7 @@ function Navbar() {
             component="a"
             onClick={() => navigate('/')}
             sx={{
-              mr: 2,
+              mr: 3,
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
@@ -62,7 +63,7 @@ function Navbar() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              {/* <MenuIcon /> */}
+              <CiMenuKebab/>
             </IconButton>
             <Menu
               id="menu-appbar"
