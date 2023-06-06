@@ -15,7 +15,7 @@ const pages = [
     {name:"Inicio", path:"/"}, {name:"Votos y estadísticas", path:"/votos"}, {name:"Sobre la web", path:"/web"}
 ];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
     null
   );
@@ -123,4 +123,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
