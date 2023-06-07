@@ -1,3 +1,4 @@
+import { sendVoto } from "../middlewares/votosMiddleware";
 import { onSuccess } from "./toastFunctions";
 
 export const validateDni = (dni: string) => {
@@ -10,7 +11,10 @@ export const validateDni = (dni: string) => {
 }
 
 export const sendInformation = (values: object, resetForm: any, onClose: any, toast: any) => {
-    resetForm({ values: { dni: "", voto: "" } });
-    onSuccess(toast, "Voto registrado correctamente.");
-    onClose();
+    sendVoto(values).then((response: any) => {
+        console.log(response)
+        resetForm({ values: { dni: "", voto: "" } });
+        onSuccess(toast, "Voto registrado correctamente.");
+        onClose();
+    })
 }
