@@ -8,14 +8,6 @@ import Web from "./pages/web/Web";
 import { ChakraProvider } from '@chakra-ui/react'
 
 function App() {
-  // const [votos, setVotos] = useState(null);
-
-  // useEffect(() => {
-  //   getVotos().then((response: any) =>{
-  //     setVotos(response?.data)
-  //     console.log(votos, response?.data)
-  //   })
-  // }, []);
 
   return (
     <>

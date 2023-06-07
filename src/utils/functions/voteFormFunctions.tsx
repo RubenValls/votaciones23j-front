@@ -25,6 +25,7 @@ export const sendInformation = (values: object, resetForm: any, onClose: any, to
 
 export const tryUpdateVoto = (values: any, onCloseEdit: any, onClose: any, toast: any, votos: any) => {
     const voto = votos.find((voto: any) => voto?.attributes?.dni === values?.dni)
+    console.log(votos)
     updateVoto(values, voto?.id)
     .then(() => {
         onSuccess(toast, "Voto actualizado correctamente.");

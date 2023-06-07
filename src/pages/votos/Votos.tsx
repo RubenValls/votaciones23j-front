@@ -25,7 +25,7 @@ export default function Votos() {
       })
       .then((data: Array<JSON>) => setVotos(data))
       .catch((error: Error) => console.log(error));
-  }, []);
+  }, [onClose]);
 
   return (
     <>
