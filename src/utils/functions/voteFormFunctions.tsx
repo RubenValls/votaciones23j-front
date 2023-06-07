@@ -18,7 +18,7 @@ export const sendInformation = (values: object, resetForm: any, onClose: any, to
             onSuccess(toast, "Voto registrado correctamente.");
             onClose();
         })
-        .catch((error: any) => {
+        .catch(() => {
             onOpenEdit(values)
         })
 }
@@ -26,12 +26,12 @@ export const sendInformation = (values: object, resetForm: any, onClose: any, to
 export const tryUpdateVoto = (values: any, onCloseEdit: any, onClose: any, toast: any, votos: any) => {
     const voto = votos.find((voto: any) => voto?.attributes?.dni === values?.dni)
     updateVoto(values, voto?.id)
-    .then((response: any) => {
+    .then(() => {
         onSuccess(toast, "Voto actualizado correctamente.");
         onCloseEdit();
         onClose();
       })
-      .catch((error: any) => {
+      .catch(() => {
         onFailure(toast, "Ha sucedido un error, vuelve a intentarlo en unos instantes.");
         onCloseEdit();
       })

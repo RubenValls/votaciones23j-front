@@ -1,5 +1,4 @@
 import axios from "axios";
-import { onFailure, onSuccess } from "../functions/toastFunctions";
 
 const config = {
   headers: {
