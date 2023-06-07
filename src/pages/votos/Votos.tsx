@@ -2,16 +2,32 @@ import {
   Box,
   Button,
   Center,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  HStack,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   StackDivider,
   VStack,
-  Wrap,
   WrapItem,
+  useDisclosure,
+  Select
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getVotos } from "../../middlewares/votosMiddleware";
+import { AiOutlineArrowRight } from "react-icons/ai";
+import VotoModalForm from "../../components/VotoModalForm";
 
 export default function Votos() {
   const [votos, setVotos] = useState<JSON[]>([]);
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   useEffect(() => {
     getVotos().then((response: any) => {
@@ -22,6 +38,7 @@ export default function Votos() {
   }, []);
 
   return (
+    <>
     <Box mt="20px" w="100%">
       <Box borderWidth="1px" borderRadius="lg" m="20px">
         <VStack spacing="30px" justify="center" p={10} w={"100%"}
@@ -37,11 +54,20 @@ export default function Votos() {
           </WrapItem>
           <WrapItem>
             <Center w="100%">
-              FORM BOTON
+              <HStack spacing='25px'>
+                <Button rightIcon={<AiOutlineArrowRight />} colorScheme='blue' onClick={onOpen}>Participar en la encuesta</Button>
+              </HStack>
             </Center>
           </WrapItem>
         </VStack>
       </Box>
     </Box>
+    
+    
+    <VotoModalForm
+      isOpen={isOpen} 
+      onClose={onClose}
+    />
+    </>
   );
 }
