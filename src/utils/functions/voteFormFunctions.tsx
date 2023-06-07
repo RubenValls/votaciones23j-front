@@ -1,5 +1,5 @@
-import { sendVoto } from "../middlewares/votosMiddleware";
-import { onSuccess } from "./toastFunctions";
+import { sendVoto, updateVoto } from "../middlewares/votosMiddleware";
+import { onFailure, onSuccess } from "./toastFunctions";
 
 export const validateDni = (dni: string) => {
     const letterDNI = dni.substring(8, 9).toUpperCase();
@@ -10,11 +10,29 @@ export const validateDni = (dni: string) => {
     return letterDNI === correctLetter
 }
 
-export const sendInformation = (values: object, resetForm: any, onClose: any, toast: any) => {
-    sendVoto(values).then((response: any) => {
-        console.log(response)
-        resetForm({ values: { dni: "", voto: "" } });
-        onSuccess(toast, "Voto registrado correctamente.");
+export const sendInformation = (values: object, resetForm: any, onClose: any, toast: any, onOpenEdit: any) => {
+    sendVoto(values)
+        .then((response: any) => {
+            console.log(response)
+            resetForm({ values: { dni: "", voto: "" } });
+            onSuccess(toast, "Voto registrado correctamente.");
+            onClose();
+        })
+        .catch((error: any) => {
+            onOpenEdit(values)
+        })
+}
+
+export const tryUpdateVoto = (values: any, onCloseEdit: any, onClose: any, toast: any, votos: any) => {
+    const voto = votos.find((voto: any) => voto?.attributes?.dni === values?.dni)
+    updateVoto(values, voto?.id)
+    .then((response: any) => {
+        onSuccess(toast, "Voto actualizado correctamente.");
+        onCloseEdit();
         onClose();
-    })
+      })
+      .catch((error: any) => {
+        onFailure(toast, "Ha sucedido un error, vuelve a intentarlo en unos instantes.");
+        onCloseEdit();
+      })
 }

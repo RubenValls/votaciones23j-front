@@ -62,7 +62,7 @@ export default function Votos() {
         </Box>
       </Box>
 
-      <VotoModalForm isOpen={isOpen} onClose={onClose} />
+      <VotoModalForm isOpen={isOpen} onClose={onClose} votos={votos}/>
     </>
   );
 }

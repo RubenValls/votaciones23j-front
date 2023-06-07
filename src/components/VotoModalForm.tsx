@@ -14,13 +14,19 @@ import {
   Input,
   FormErrorMessage,
   useToast,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { sendInformation, validateDni } from "../utils/functions/voteFormFunctions";
 import { onFailure } from "../utils/functions/toastFunctions";
+import { useRef, useState } from "react";
+import EditarVotoModal from "./EditarVotoModal";
 
-export default function VotoModalForm({ isOpen, onClose }: any) {
+export default function VotoModalForm({ isOpen, onClose, votos }: any) {
+  const [values, setValues] = useState<object>({});
+  const { isOpen: isOpenEdit, onOpen: onOpenEdit, onClose: onCloseEdit } = useDisclosure();
+  const cancelRef = useRef()
   const toast = useToast();
   const DNI_REGEX = /^(\d{8})([A-Z])$/;
 
@@ -39,7 +45,7 @@ export default function VotoModalForm({ isOpen, onClose }: any) {
           initialValues={{ dni: "", voto: "" }}
           onSubmit={(values, { resetForm }) => {
             validateDni(values?.dni)
-              ? sendInformation(values, resetForm, onClose, toast)
+              ? (setValues(values), sendInformation(values, resetForm, onClose, toast, onOpenEdit))
               : onFailure(toast, "El DNI introducido no es válido.");
           }}
         >
@@ -118,6 +124,8 @@ export default function VotoModalForm({ isOpen, onClose }: any) {
           )}
         </Formik>
       </Modal>
+
+      <EditarVotoModal isOpen={isOpenEdit} onCloseEdit={onCloseEdit} onClose={onClose} cancelRef={cancelRef} values={values} votos={votos}/>
     </>
   );
 }
