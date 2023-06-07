@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { getVotos } from "../../utils/middlewares/votosMiddleware";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import VotoModalForm from "../../components/VotoModalForm";
+import VotosChart from "../../components/VotosChart";
 
 export default function Votos() {
   const [votos, setVotos] = useState<JSON[]>([]);
@@ -40,8 +41,8 @@ export default function Votos() {
           >
             <WrapItem>
               <Center w="100%">
-                <Box h="auto" bg="yellow.200">
-                  GRÁFICO
+                <Box h="auto">
+                  <VotosChart/>
                 </Box>
               </Center>
             </WrapItem>
