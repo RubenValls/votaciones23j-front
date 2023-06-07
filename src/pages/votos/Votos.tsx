@@ -2,23 +2,11 @@ import {
   Box,
   Button,
   Center,
-  FormControl,
-  FormHelperText,
-  FormLabel,
   HStack,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalFooter,
-  ModalHeader,
-  ModalOverlay,
   StackDivider,
   VStack,
   WrapItem,
   useDisclosure,
-  Select
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { getVotos } from "../../utils/middlewares/votosMiddleware";
@@ -27,47 +15,54 @@ import VotoModalForm from "../../components/VotoModalForm";
 
 export default function Votos() {
   const [votos, setVotos] = useState<JSON[]>([]);
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   useEffect(() => {
-    getVotos().then((response: any) => {
-      return response?.data
-    })
-    .then((data: Array<JSON>) => setVotos(data))
-    .catch((error: Error) => console.log(error))
+    getVotos()
+      .then((response: any) => {
+        return response?.data;
+      })
+      .then((data: Array<JSON>) => setVotos(data))
+      .catch((error: Error) => console.log(error));
   }, []);
 
   return (
     <>
-    <Box mt="20px" w="100%">
-      <Box borderWidth="1px" borderRadius="lg" m="20px">
-        <VStack spacing="30px" justify="center" p={10} w={"100%"}
-                divider={<StackDivider borderColor='gray.200' />}
-                align='stretch'
-                >
-          <WrapItem>
-            <Center w="100%">
-                <Box h='auto' bg='yellow.200'>
+      <Box mt="20px" w="100%">
+        <Box borderWidth="1px" borderRadius="lg" m="20px">
+          <VStack
+            spacing="30px"
+            justify="center"
+            p={10}
+            w={"100%"}
+            divider={<StackDivider borderColor="gray.200" />}
+            align="stretch"
+          >
+            <WrapItem>
+              <Center w="100%">
+                <Box h="auto" bg="yellow.200">
                   GRÁFICO
                 </Box>
-            </Center>
-          </WrapItem>
-          <WrapItem>
-            <Center w="100%">
-              <HStack spacing='25px'>
-                <Button rightIcon={<AiOutlineArrowRight />} colorScheme='blue' onClick={onOpen}>Participar en la encuesta</Button>
-              </HStack>
-            </Center>
-          </WrapItem>
-        </VStack>
+              </Center>
+            </WrapItem>
+            <WrapItem>
+              <Center w="100%">
+                <HStack spacing="25px">
+                  <Button
+                    rightIcon={<AiOutlineArrowRight />}
+                    colorScheme="blue"
+                    onClick={onOpen}
+                  >
+                    Participar en la encuesta
+                  </Button>
+                </HStack>
+              </Center>
+            </WrapItem>
+          </VStack>
+        </Box>
       </Box>
-    </Box>
-    
-    
-    <VotoModalForm
-      isOpen={isOpen} 
-      onClose={onClose}
-    />
+
+      <VotoModalForm isOpen={isOpen} onClose={onClose} />
     </>
   );
 }

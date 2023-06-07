@@ -13,11 +13,15 @@ import {
   Select,
   Input,
   FormErrorMessage,
+  useToast,
 } from "@chakra-ui/react";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { validateDni } from "../utils/functions/voteFormFunctions";
+import { onFailure, onSuccess } from "../utils/functions/toastFunctions";
 
 export default function VotoModalForm({ isOpen, onClose }: any) {
+  const toast = useToast();
   const DNI_REGEX = /^(\d{8})([A-Z])$/;
 
   const validationSchema = Yup.object().shape({
@@ -33,9 +37,11 @@ export default function VotoModalForm({ isOpen, onClose }: any) {
         <Formik
           validationSchema={validationSchema}
           initialValues={{ dni: "", voto: "" }}
-          onSubmit={(values, {resetForm}) => {
-            console.log(values);
-            resetForm({values: { dni: "", voto: "" }})
+          onSubmit={(values, { resetForm }) => {
+            validateDni(values?.dni)
+              ? onSuccess(toast, "Voto registrado correctamente.")
+              : onFailure(toast, "El DNI introducido no es válido.");
+            resetForm({ values: { dni: "", voto: "" } });
           }}
         >
           {({
