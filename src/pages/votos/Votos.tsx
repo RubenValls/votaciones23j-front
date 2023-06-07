@@ -21,7 +21,7 @@ import {
   Select
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { getVotos } from "../../middlewares/votosMiddleware";
+import { getVotos } from "../../utils/middlewares/votosMiddleware";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import VotoModalForm from "../../components/VotoModalForm";
 
