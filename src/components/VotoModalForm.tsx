@@ -17,8 +17,8 @@ import {
 } from "@chakra-ui/react";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { validateDni } from "../utils/functions/voteFormFunctions";
-import { onFailure, onSuccess } from "../utils/functions/toastFunctions";
+import { sendInformation, validateDni } from "../utils/functions/voteFormFunctions";
+import { onFailure } from "../utils/functions/toastFunctions";
 
 export default function VotoModalForm({ isOpen, onClose }: any) {
   const toast = useToast();
@@ -39,9 +39,8 @@ export default function VotoModalForm({ isOpen, onClose }: any) {
           initialValues={{ dni: "", voto: "" }}
           onSubmit={(values, { resetForm }) => {
             validateDni(values?.dni)
-              ? onSuccess(toast, "Voto registrado correctamente.")
+              ? sendInformation(values, resetForm, onClose, toast)
               : onFailure(toast, "El DNI introducido no es válido.");
-            resetForm({ values: { dni: "", voto: "" } });
           }}
         >
           {({

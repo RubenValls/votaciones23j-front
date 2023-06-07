@@ -1,3 +1,5 @@
+import { onSuccess } from "./toastFunctions";
+
 export const validateDni = (dni: string) => {
     const letterDNI = dni.substring(8, 9).toUpperCase();
     const numDNI = parseInt(dni.substring(0, 8));
@@ -5,4 +7,10 @@ export const validateDni = (dni: string) => {
     const correctLetter = letters[numDNI % 23];
 
     return letterDNI === correctLetter
-} 
+}
+
+export const sendInformation = (values: object, resetForm: any, onClose: any, toast: any) => {
+    resetForm({ values: { dni: "", voto: "" } });
+    onSuccess(toast, "Voto registrado correctamente.");
+    onClose();
+}
