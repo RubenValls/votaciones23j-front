@@ -13,7 +13,6 @@ export default function VotosChart({votos}: any) {
   useEffect(() => {
     setPartidos(getPartidos(votos));
     setVotosPorPartido(getVotos(votos))
-    console.log(votos)
   }, [votos]);
 
     const size = window.innerWidth >= 800 

@@ -23,19 +23,8 @@ import { VscGistSecret } from "react-icons/vsc";
 import { BsFileBarGraph } from "react-icons/bs";
 
 
-export default function Inicio({ votos }: any) {
+export default function Inicio({ votos, partidos }: any) {
   const navigate = useNavigate();
-  const [partidos, setPartidos] = useState<JSON[]>([]);
-
-
-  useEffect(() => {
-    getPartidos()
-      .then((response: any) => {
-        return response?.data;
-      })
-      .then((data: Array<JSON>) => (setPartidos(data), console.log(data)))
-      .catch((error: Error) => console.log(error));
-  }, []);
 
   return (
     <>
