@@ -14,8 +14,6 @@ import {
 import eleccionesimg from "../../assets/banner23j.png";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import { getPartidos } from "../../utils/middlewares/partidosMiddleware";
-import { useEffect, useState } from "react";
 import LogosPartidos from "./components/LogosPartidos";
 import { GiArtificialHive } from "react-icons/gi";
 import { SlEnvolopeLetter } from "react-icons/sl";
