@@ -42,7 +42,7 @@ export default function Votos() {
             <WrapItem>
               <Center w="100%">
                 <Box h="auto">
-                  <VotosChart/>
+                  <VotosChart votos={votos}/>
                 </Box>
               </Center>
             </WrapItem>

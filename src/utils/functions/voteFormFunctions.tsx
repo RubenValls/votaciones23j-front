@@ -30,14 +30,21 @@ export const sendInformation = (values: object, resetForm: any, onClose: any, to
         })
 }
 
-export const tryUpdateVoto = (values: any, onCloseEdit: any, onClose: any, toast: any, votos: any, setVotos: any) => {
+export const tryUpdateVoto = (values: any, onCloseEdit: any, onClose: any, toast: any, votos: any, setVotos: any): any => {
     const voto = votos.find((voto: any) => voto?.attributes?.dni === values?.dni)
-    setVotos(votos) //setear los votos tras la actualización
     updateVoto(values, voto?.id)
     .then(() => {
-        onSuccess(toast, "Voto actualizado correctamente.");
-        onCloseEdit();
-        onClose();
+        getVotos()
+                .then((response: any) => {
+                    return response?.data;
+                })
+                .then((data: Array<JSON>) => {
+                    setVotos(data)
+                    onSuccess(toast, "Voto actualizado correctamente.");
+                    onCloseEdit();
+                    onClose();
+                })
+                .catch((error: Error) => console.log(error));
       })
       .catch(() => {
         onFailure(toast, "Ha sucedido un error, vuelve a intentarlo en unos instantes.");
