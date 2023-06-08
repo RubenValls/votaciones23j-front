@@ -1,4 +1,4 @@
-import { Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useEffect, useState } from 'react';
 import { getBackgroundColor, getPartidos, getVotos } from '../utils/functions/chartFunctions';
@@ -48,9 +48,8 @@ export default function VotosChart({votos}: any) {
           },
         ],
       };
-    
-    
+
     return (
-        <Doughnut data={data} style={{position:'relative', height:`${size}`, width:`${size}`}}/>
+        <Pie data={data} style={{position:'relative', height:`${size}`, width:`${size}`}}/>
   )
 }
