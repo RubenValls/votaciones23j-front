@@ -8,6 +8,7 @@ import Web from "./pages/web/Web";
 import { ChakraProvider } from '@chakra-ui/react'
 import { useEffect, useState } from "react";
 import { getVotos } from "./utils/middlewares/votosMiddleware";
+import PartidosPoliticos from "./pages/partidos-politicos/PartidosPoliticos";
 
 function App() {
   const [votos, setVotos] = useState<JSON[]>([]);
@@ -29,6 +30,7 @@ function App() {
           <Route path="/" element={<Inicio votos={votos}/>}/>
           <Route path="/votos" element={<Votos votos={votos} setVotos={setVotos}/>}/>
           <Route path="/web" element={<Web/>}/>
+          <Route path="/partidos-politicos" element={<PartidosPoliticos/>}/>
         </Routes>
       </ChakraProvider>
     </>

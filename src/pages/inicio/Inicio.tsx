@@ -78,20 +78,19 @@ export default function Inicio({ votos }: any) {
               <List spacing={3}>
                 <ListItem>
                   <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    Esta web tiene como objetivo realizar una encuesta de intención de voto y conocer la realidad social.
                 </ListItem>
                 <ListItem>
                   <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
-                  Assumenda, quia temporibus eveniet a libero incidunt suscipit
+                    La intención de voto siempre permanecerá anómina, no se compartirá ningún dato personal con terceros.
                 </ListItem>
                 <ListItem>
                   <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
-                  Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                  Ejercer el derecho a voto es esencial y, por ello, se invita a toda la ciudadania a participar de las elecciones del 23J.
                 </ListItem>
-                {/* You can also use custom icons from react-icons */}
                 <ListItem>
                   <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
-                  Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
+                  Toda la información sobre los partidos se ha realizado con el uso de IA de la manera más objetiva posible.
                 </ListItem>
               </List>
             </Center>
