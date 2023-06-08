@@ -71,6 +71,13 @@ export default function Inicio({ votos }: any) {
           <LogosPartidos partidos={partidos}/>
         </Center>
       </Box>
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#1976D2" textColor="white">
+        <Center>
+          <Heading as="i">
+            Información sobre la web
+          </Heading>
+        </Center>
+      </Box>
       <Box m="20px">
         <Wrap spacing="30px" justify="center" p={10}>
           <WrapItem>
