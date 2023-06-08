@@ -1,8 +1,12 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text } from "@chakra-ui/react";
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast } from "@chakra-ui/react";
+import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
+import { onFailure } from "../../utils/functions/toastFunctions";
 
 export default function PartidosPoliticos({partidos}: any) {
   const location = useLocation();
+  const toast = useToast();
+  
   return (
     <>
       <Box mt="20px" w="100%">
@@ -31,6 +35,16 @@ export default function PartidosPoliticos({partidos}: any) {
                               <Text as="i">
                                 {partido?.attributes?.descripcion_larga}
                               </Text>
+                              <Button
+                                rightIcon={<HiDownload />}
+                                onClick={() => onFailure(toast, "Programa electoral no disponible, vuelve a intentarlo próximamente")}
+                                colorScheme="twitter"
+                                size="lg"
+                                variant="outline"
+                                mt="25px"
+                                >
+                                Descargar programa electoral
+                              </Button>
                           </TabPanel>
                       )
                   })
