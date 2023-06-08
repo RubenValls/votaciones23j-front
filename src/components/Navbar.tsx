@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { CiMenuKebab } from "react-icons/ci";
 
 const pages = [
-    {name:"Inicio", path:"/"}, {name:"Votos y estadísticas", path:"/votos"}, {name:"Sobre la web", path:"/web"}
+    {name:"Inicio", path:"/"}, {name:"Votos y estadísticas", path:"/votos"}, {name:"Partidos políticos", path:"/partidos-politicos"}, {name:"Sobre la web", path:"/web"}
 ];
 
 function Navbar() {

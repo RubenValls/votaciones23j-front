@@ -17,6 +17,11 @@ import { useNavigate } from "react-router-dom";
 import { getPartidos } from "../../utils/middlewares/partidosMiddleware";
 import { useEffect, useState } from "react";
 import LogosPartidos from "./components/LogosPartidos";
+import { GiArtificialHive } from "react-icons/gi";
+import { SlEnvolopeLetter } from "react-icons/sl";
+import { VscGistSecret } from "react-icons/vsc";
+import { BsFileBarGraph } from "react-icons/bs";
+
 
 export default function Inicio({ votos }: any) {
   const navigate = useNavigate();
@@ -34,7 +39,7 @@ export default function Inicio({ votos }: any) {
 
   return (
     <>
-      <Box mt="20px" p={10} w="100%" textAlign="center">
+      <Box mt="20px" p={10} w="100%" textAlign="center" textColor="#1976D2">
         <Center>
           <VStack>
             <Heading>Participación actual:</Heading>
@@ -54,7 +59,7 @@ export default function Inicio({ votos }: any) {
           </VStack>
         </Center>
       </Box>
-      <Box mt="15px" p={10} w="100%" textAlign="center">
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#1976D2" textColor="white">
         <Center>
           <Heading as="i">
             ¿Qué partidos políticos se presentan a las elecciones del 23J?
@@ -75,21 +80,21 @@ export default function Inicio({ votos }: any) {
           </WrapItem>
           <WrapItem>
             <Center w="auto" h="100%" ml="20px">
-              <List spacing={3}>
+              <List spacing={3} textColor="#22324C">
                 <ListItem>
-                  <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
+                  <ListIcon as={BsFileBarGraph} color="blue.500" />
                     Esta web tiene como objetivo realizar una encuesta de intención de voto y conocer la realidad social.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
+                  <ListIcon as={VscGistSecret} color="blue.500" />
                     La intención de voto siempre permanecerá anómina, no se compartirá ningún dato personal con terceros.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
+                  <ListIcon as={SlEnvolopeLetter} color="blue.500" />
                   Ejercer el derecho a voto es esencial y, por ello, se invita a toda la ciudadania a participar de las elecciones del 23J.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={AiOutlineCheckSquare} color="blue.500" />
+                  <ListIcon as={GiArtificialHive} color="blue.500" />
                   Toda la información sobre los partidos se ha realizado con el uso de IA de la manera más objetiva posible.
                 </ListItem>
               </List>
