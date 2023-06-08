@@ -1,11 +1,13 @@
 import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 
 export default function PartidosPoliticos({partidos}: any) {
+  const location = useLocation();
   return (
     <>
       <Box mt="20px" w="100%">
         <Box m="20px">
-          <Tabs variant='soft-rounded' colorScheme='twitter' align="center">
+          <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0}>
             <TabList>
               {
                   partidos.map((partido: any) => {
