@@ -7,36 +7,66 @@ import {
   List,
   ListIcon,
   ListItem,
+  VStack,
   Wrap,
   WrapItem,
 } from "@chakra-ui/react";
 import eleccionesimg from "../../assets/banner23j.png";
 import { AiOutlineArrowRight, AiOutlineCheckSquare } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
+import { getPartidos } from "../../utils/middlewares/partidosMiddleware";
+import { useEffect, useState } from "react";
+import LogosPartidos from "./components/LogosPartidos";
 
-export default function Inicio() {
+export default function Inicio({ votos }: any) {
   const navigate = useNavigate();
+  const [partidos, setPartidos] = useState<JSON[]>([]);
+
+
+  useEffect(() => {
+    getPartidos()
+      .then((response: any) => {
+        return response?.data;
+      })
+      .then((data: Array<JSON>) => (setPartidos(data), console.log(data)))
+      .catch((error: Error) => console.log(error));
+  }, []);
 
   return (
     <>
       <Box mt="20px" p={10} w="100%" textAlign="center">
         <Center>
-          <Heading mb="25px" as="i" size="sm">
-            ¿Quieres conocer el estado de las elecciones 23J?
-          </Heading>
+          <VStack>
+            <Heading>Participación actual:</Heading>
+            <Heading as="i" size="md" mt="5px">
+              {votos?.length} personas
+            </Heading>
+            <Button
+              rightIcon={<AiOutlineArrowRight />}
+              onClick={() => navigate("/votos")}
+              colorScheme="twitter"
+              size="lg"
+              variant="outline"
+              mt="5px"
+            >
+              Participar en la encuesta
+            </Button>
+          </VStack>
         </Center>
+      </Box>
+      <Box mt="15px" p={10} w="100%" textAlign="center">
         <Center>
-          <Heading mb="25px" size="lg">
-            ¡Observa las votaciones realizadas y participa!
-          </Heading>
-        </Center>
-        <Center>
-          <Heading mb={4} as="i" size="sm">
-            La información del voto permanecerá anónima
+          <Heading as="i">
+            ¿Qué partidos políticos se presentan a las elecciones del 23J?
           </Heading>
         </Center>
       </Box>
-      <Box borderWidth="1px" borderRadius="lg" m="20px">
+      <Box p={10} w="100%" textAlign="center">
+        <Center>
+          <LogosPartidos partidos={partidos}/>
+        </Center>
+      </Box>
+      <Box m="20px">
         <Wrap spacing="30px" justify="center" p={10}>
           <WrapItem>
             <Center maxW="600" h="auto">

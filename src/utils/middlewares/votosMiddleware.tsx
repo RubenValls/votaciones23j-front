@@ -1,13 +1,13 @@
 import axios from "axios";
 
-const config = {
+export const config = {
   headers: {
     Authorization: "Bearer " + import.meta.env.VITE_API_TOKEN,
   },
 };
 
 export const getVotos = async () => {
-  const _votos = await axios.get(import.meta.env.VITE_API_ENDPOINT, config);
+  const _votos = await axios.get(import.meta.env.VITE_API_ENDPOINT_VOTOS, config);
   return _votos?.data;
 };
 
@@ -18,7 +18,7 @@ export const sendVoto = (data: any) => {
       voto: data?.voto.toLowerCase(),
     },
   };
-  return axios.post(import.meta.env.VITE_API_ENDPOINT, _data, config);
+  return axios.post(import.meta.env.VITE_API_ENDPOINT_VOTOS, _data, config);
 };
 
 export const updateVoto = (data: any, id: number) => {
@@ -28,5 +28,5 @@ export const updateVoto = (data: any, id: number) => {
       voto: data?.voto.toLowerCase(),
     },
   };
-  return axios.put(`${import.meta.env.VITE_API_ENDPOINT}/${id}`, _data, config)
+  return axios.put(`${import.meta.env.VITE_API_ENDPOINT_VOTOS}/${id}`, _data, config)
 }
