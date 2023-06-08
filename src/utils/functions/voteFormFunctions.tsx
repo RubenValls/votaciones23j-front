@@ -12,7 +12,7 @@ export const validateDni = (dni: string) => {
 
 export const sendInformation = (values: object, resetForm: any, onClose: any, toast: any, onOpenEdit: any, setVotos: any) => {
     sendVoto(values)
-        .then((response: any) => {
+        .then(() => {
             getVotos()
                 .then((response: any) => {
                     return response?.data;
