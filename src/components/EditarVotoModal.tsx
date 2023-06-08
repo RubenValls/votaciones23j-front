@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { tryUpdateVoto } from "../utils/functions/voteFormFunctions";
 
-export default function EditarVotoModal({ isOpen, onCloseEdit, onClose, cancelRef, values, votos }: any) {
+export default function EditarVotoModal({ isOpen, onCloseEdit, onClose, cancelRef, values, votos, setVotos }: any) {
     const toast = useToast()
   return (
     <>
@@ -33,7 +33,7 @@ export default function EditarVotoModal({ isOpen, onCloseEdit, onClose, cancelRe
               <Button ref={cancelRef} onClick={onCloseEdit}>
                 Cancelar
               </Button>
-              <Button colorScheme="twitter" onClick={() => tryUpdateVoto(values, onCloseEdit, onClose, toast, votos)} ml={3}>
+              <Button colorScheme="twitter" onClick={() => tryUpdateVoto(values, onCloseEdit, onClose, toast, votos, setVotos)} ml={3}>
                 Actualizar voto
               </Button>
             </AlertDialogFooter>

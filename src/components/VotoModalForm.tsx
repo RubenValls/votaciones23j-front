@@ -23,7 +23,7 @@ import { onFailure } from "../utils/functions/toastFunctions";
 import { useRef, useState } from "react";
 import EditarVotoModal from "./EditarVotoModal";
 
-export default function VotoModalForm({ isOpen, onClose, votos }: any) {
+export default function VotoModalForm({ isOpen, onClose, votos, setVotos }: any) {
   const [values, setValues] = useState<object>({});
   const { isOpen: isOpenEdit, onOpen: onOpenEdit, onClose: onCloseEdit } = useDisclosure();
   const cancelRef = useRef()
@@ -45,7 +45,7 @@ export default function VotoModalForm({ isOpen, onClose, votos }: any) {
           initialValues={{ dni: "", voto: "" }}
           onSubmit={(values, { resetForm }) => {
             validateDni(values?.dni)
-              ? (setValues(values), sendInformation(values, resetForm, onClose, toast, onOpenEdit))
+              ? (setValues(values), sendInformation(values, resetForm, onClose, toast, onOpenEdit, setVotos))
               : onFailure(toast, "El DNI introducido no es válido.");
           }}
         >
@@ -125,7 +125,7 @@ export default function VotoModalForm({ isOpen, onClose, votos }: any) {
         </Formik>
       </Modal>
 
-      <EditarVotoModal isOpen={isOpenEdit} onCloseEdit={onCloseEdit} onClose={onClose} cancelRef={cancelRef} values={values} votos={votos}/>
+      <EditarVotoModal isOpen={isOpenEdit} onCloseEdit={onCloseEdit} onClose={onClose} cancelRef={cancelRef} values={values} votos={votos} setVotos={setVotos}/>
     </>
   );
 }
