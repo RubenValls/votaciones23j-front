@@ -12,7 +12,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 import eleccionesimg from "../../assets/banner23j.png";
-import { AiOutlineArrowRight, AiOutlineCheckSquare } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 import { getPartidos } from "../../utils/middlewares/partidosMiddleware";
 import { useEffect, useState } from "react";
