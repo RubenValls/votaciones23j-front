@@ -11,13 +11,13 @@ export default function PartidosPoliticos({partidos}: any) {
     <>
       <Box mt="20px" w="100%">
         <Box m="20px">
-          <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0}>
+          <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0} isFitted>
             <TabList>
               {
                   partidos.map((partido: any) => {
                       return(
                           <Tab maxWidth="75px" key={partido?.id}>
-                              <Image src={partido?.attributes?.logo} alt={partido?.attributes?.nombre}/>
+                              <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido}/>
                           </Tab>
                       )
                   })
