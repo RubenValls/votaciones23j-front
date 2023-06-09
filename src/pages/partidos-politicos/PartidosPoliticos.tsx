@@ -13,7 +13,7 @@ export default function PartidosPoliticos({partidos}: any) {
         <Box m="20px">
           <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0}>
             <TabList>
-              <Wrap spacing="100px" justify="center" p={10}>
+              <Wrap spacing="15px" justify="center" p={10}>
                 {
                     partidos.map((partido: any) => {
                         return(
