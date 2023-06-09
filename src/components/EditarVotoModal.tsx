@@ -20,7 +20,7 @@ export default function EditarVotoModal({ isOpen, onCloseEdit, onClose, cancelRe
         onClose={onCloseEdit}
       >
         <AlertDialogOverlay>
-          <AlertDialogContent>
+          <AlertDialogContent m="10px">
             <AlertDialogHeader fontSize="lg" fontWeight="bold">
               DNI introducido anteriormente
             </AlertDialogHeader>

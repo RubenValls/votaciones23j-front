@@ -59,7 +59,7 @@ export default function VotoModalForm({ isOpen, onClose, votos, setVotos }: any)
           }) => (
             <form noValidate onSubmit={handleSubmit}>
               <ModalOverlay />
-              <ModalContent>
+              <ModalContent m="10px">
                 <ModalHeader>Intención de voto</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
