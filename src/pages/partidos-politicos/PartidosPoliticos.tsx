@@ -1,4 +1,4 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider } from "@chakra-ui/react";
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
@@ -11,17 +11,19 @@ export default function PartidosPoliticos({partidos}: any) {
     <>
       <Box mt="20px" w="100%">
         <Box m="20px">
-          <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0} isFitted>
+          <Tabs variant='soft-rounded' colorScheme='twitter' align="center" defaultIndex={location?.state?.id ? location?.state?.id : 0}>
             <TabList>
-              {
-                  partidos.map((partido: any) => {
-                      return(
-                          <Tab maxWidth="75px" key={partido?.id}>
-                              <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido}/>
-                          </Tab>
-                      )
-                  })
-              }
+              <Wrap spacing="100px" justify="center" p={10}>
+                {
+                    partidos.map((partido: any) => {
+                        return(
+                            <Tab maxWidth="100px" key={partido?.id}>
+                                <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido}/>
+                            </Tab>
+                        )
+                    })
+                }
+              </Wrap>
             </TabList>
             <TabPanels mt="25px">
               {
