@@ -106,6 +106,13 @@ export default function VotoModalForm({ isOpen, onClose, votos, setVotos }: any)
                       <option>PP</option>
                       <option>VOX</option>
                       <option>SUMAR</option>
+                      <option>PODEMOS</option>
+                      <option>ERC</option>
+                      <option>JUNTS</option>
+                      <option>PNV</option>
+                      <option>BILDU</option>
+                      <option>OTROS</option>
+                      <option>ABSTENCION</option>
                     </Select>
                     {errors && (
                       <FormErrorMessage>{`${

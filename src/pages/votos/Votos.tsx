@@ -44,6 +44,7 @@ export default function Votos({votos, setVotos}: any) {
                   <Button
                     rightIcon={<AiOutlineArrowRight />}
                     colorScheme="blue"
+                    variant="outline"
                     onClick={onOpen}
                   >
                     Participar en la encuesta
