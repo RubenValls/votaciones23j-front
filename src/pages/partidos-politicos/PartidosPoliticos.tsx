@@ -47,11 +47,11 @@ export default function PartidosPoliticos({partidos}: any) {
                                 rightIcon={<HiDownload />}
                                 onClick={() => onFailure(toast, "Programa electoral no disponible, vuelve a intentarlo próximamente")}
                                 colorScheme="twitter"
-                                size="lg"
+                                size={window.innerWidth > 450 ? "lg" : "sm"}
                                 variant="outline"
                                 mt="25px"
                                 >
-                                Descargar programa electoral de {partido?.attributes?.partido.toUpperCase()}
+                                Descargar programa - {partido?.attributes?.partido.toUpperCase()}
                               </Button>
                           </TabPanel>
                       )
