@@ -28,7 +28,7 @@ function App() {
       .then((response: any) => {
         return response?.data;
       })
-      .then((data: Array<JSON>) => (setPartidos(data), console.log(data)))
+      .then((data: Array<JSON>) => (setPartidos(data)))
       .catch((error: Error) => console.log(error));
   }, []);
 

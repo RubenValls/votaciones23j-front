@@ -3,6 +3,7 @@ import {
   Button,
   Center,
   HStack,
+  Heading,
   VStack,
   WrapItem,
   useDisclosure,
@@ -25,6 +26,11 @@ export default function Votos({votos, setVotos}: any) {
             w={"100%"}
             align="stretch"
           >
+            <Center>
+            <Heading size="lg" as="i" mb="20px" textColor="#1976D2">
+                  Gráfico de intención de voto
+            </Heading>
+            </Center>
             <WrapItem>
               <Center w="100%">
                 <Box h="auto">
@@ -32,7 +38,7 @@ export default function Votos({votos, setVotos}: any) {
                 </Box>
               </Center>
             </WrapItem>
-            <WrapItem>
+            <WrapItem mt="15px">
               <Center w="100%">
                 <HStack spacing="25px">
                   <Button

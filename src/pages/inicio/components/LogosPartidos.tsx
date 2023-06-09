@@ -10,7 +10,7 @@ export default function LogosPartidos({partidos}: any) {
                 partidos.map((partido: any, index: number) => {
                     return(
                         <WrapItem maxWidth="200px" key={partido?.id} onClick={() => navigate("/partidos-politicos", { state: {id: index} })}>
-                            <Image src={partido?.attributes?.logo} alt={partido?.attributes?.nombre}/>
+                            <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido}/>
                         </WrapItem>
                     )
                 })
