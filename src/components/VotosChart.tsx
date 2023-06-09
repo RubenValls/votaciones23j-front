@@ -2,8 +2,9 @@ import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { useEffect, useState } from 'react';
 import { getBackgroundColor, getPartidos, getVotos } from '../utils/functions/chartFunctions';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
-ChartJS.register(ArcElement, Tooltip, Legend);
+ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 
 export default function VotosChart({votos}: any) {
 
@@ -52,7 +53,7 @@ export default function VotosChart({votos}: any) {
             borderWidth: 2,
           },
         ],
-      };
+      }; 
 
     return (
         <Pie data={data} style={{position:'relative', height:`${size}`, width:`${size}`}}/>
