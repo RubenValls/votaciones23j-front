@@ -36,9 +36,6 @@ export const getBackgroundColor = (partido: any) => {
     case "VOX":
       return "rgba(102, 188, 41, 0.2)";
       break;
-    case "PODEMOS":
-      return "rgba(153, 102, 255, 0.2)";
-      break;
     case "SUMAR":
       return "rgba(231, 18, 84, 0.2)";
       break;

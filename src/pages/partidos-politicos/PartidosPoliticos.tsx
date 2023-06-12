@@ -18,7 +18,7 @@ export default function PartidosPoliticos({partidos}: any) {
                     partidos.map((partido: any) => {
                         return(
                             <Tab maxWidth="100px" key={partido?.id}>
-                                <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido}/>
+                                <Image src={partido?.attributes?.logo} alt={partido?.attributes?.partido} />
                             </Tab>
                         )
                     })
@@ -40,7 +40,7 @@ export default function PartidosPoliticos({partidos}: any) {
                               <Heading size="lg" mb="25px" mt="25px">
                                 {partido?.attributes?.nombre_candidato}
                               </Heading>
-                              <Image src={partido?.attributes?.img_candidato} alt={partido?.attributes?.nombre_candidato} maxWidth="300px" mb="25px"/>
+                              <Image src={partido?.attributes?.img_candidato} alt={partido?.attributes?.nombre_candidato} maxWidth="300px" mb="25px" borderRadius='3xl'/>
                               <Text as="i">
                                 {partido?.attributes?.descripcion_candidato}
                               </Text>
