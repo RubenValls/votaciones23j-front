@@ -1,12 +1,16 @@
-import { Box, Card, CardBody, CardHeader, Center, Heading, Stack, StackDivider, Text, Wrap, WrapItem, Image, Divider, Button, Link, Tooltip } from "@chakra-ui/react";
+import { Box, Card, CardBody, CardHeader, Center, Heading, Stack, StackDivider, Text, Wrap, WrapItem, Image, Divider, Button, Link, Tooltip, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { CiLinkedin } from "react-icons/ci";
 import {FiGithub} from "react-icons/fi"
 import {MdAlternateEmail} from "react-icons/md"
+import {BiCodeAlt, BiMessageAltDots, BiStats} from "react-icons/bi"
+import {FaRegEye} from "react-icons/fa"
+import { VscGistSecret } from "react-icons/vsc";
+
 
 export default function Web() {
   return (
     <Center>
-      <Box padding="20px" maxWidth="1500px">
+      <Box padding="20px" maxWidth="850px">
         <Card>
           <CardHeader>
             <Heading size='md'>Aspectos de interés</Heading>
@@ -18,17 +22,133 @@ export default function Web() {
                 <Heading size='xs' textTransform='uppercase'>
                   Datos de la web
                 </Heading>
-                <Text pt='2' fontSize='sm'>
-                  View a summary of all your clients over the last month.
-                </Text>
+                <Box mt='10px'>
+                    <List spacing='15px' textAlign='start'>
+                      <ListItem>
+                        <ListIcon as={BiCodeAlt} color="blue.500" />
+                          El objetivo de la web es poner en práctica conocimientos tecnológicos relacionados con Front y Back End. 
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={FaRegEye} color="blue.500" />
+                          La finalidad de la web es observar la intención de voto de la sociedad desde un punto de vista objetivo.
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={VscGistSecret} color="blue.500" />
+                        Cualquier tipo de información aportada permanecerá privada y jamás será compartida a terceros.
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={BiStats} color="blue.500" />
+                        Los partidos corresponden a aquellos con más % de votos en las pasadas elecciones generales del 2019.
+                      </ListItem>
+                      <ListItem>
+                        <ListIcon as={BiMessageAltDots} color="blue.500" />
+                        Para cualquier propuesta de mejora, al final de esta página se encuentran los datos de contacto.
+                      </ListItem>
+                    </List>
+                </Box>
               </Box>
               <Box>
                 <Heading size='xs' textTransform='uppercase'>
                   Tecnologías utilizadas
                 </Heading>
-                <Text pt='2' fontSize='sm'>
-                  Check out the overview of your clients.
-                </Text>
+                <Box>
+                  <Center>
+                  <Wrap spacing="75px" justify="center" padding="20px">
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://es.react.dev/" isExternal>
+                          <Tooltip label='React' placement='auto'>
+                          <Image
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+                            alt="React"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://mui.com/" isExternal>
+                          <Tooltip label='MaterialUI' placement='auto'>
+                          <Image
+                            src="https://mui.com/static/logo.png"
+                            alt="MaterialUI"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://chakra-ui.com" isExternal>
+                          <Tooltip label='Chakra UI' placement='auto'>
+                          <Image
+                            src="https://www.happylifecreators.com/wp/wp-content/uploads/2022/06/chakra-ui_title2-400x400.png"
+                            alt="Chakra UI"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://strapi.io/" isExternal>
+                          <Tooltip label='Strapi' placement='auto'>
+                          <Image
+                            src="https://cdn.worldvectorlogo.com/logos/strapi-2.svg"
+                            alt="Strapi"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://www.chartjs.org/" isExternal>
+                          <Tooltip label='ChartJS' placement='auto'>
+                          <Image
+                            src="https://asset.brandfetch.io/idFdo8ulhr/idzj34qGQm.png"
+                            alt="ChartJS"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://formik.org/" isExternal>
+                          <Image
+                            src="https://user-images.githubusercontent.com/4060187/61057426-4e5a4600-a3c3-11e9-9114-630743e05814.png"
+                            alt="Formik"
+                          />
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://www.npmjs.com/package/yup" isExternal>
+                          <Image
+                            src="https://media.licdn.com/dms/image/C4D0BAQHHQHP6KFmrNQ/company-logo_200_200/0/1663569046136?e=2147483647&v=beta&t=UpFHV8IOJGbB8MvLaEVX8XvyOC5uRKWqMmgYW-S0PuE"
+                            alt="Yup"
+                          />
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://vitejs.dev/" isExternal>
+                          <Tooltip label='Vite' placement='auto'>
+                          <Image
+                            src="https://vitejs.dev/logo-with-shadow.png"
+                            alt="Vite"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                  </Wrap>
+                  </Center>
+                </Box>
               </Box>
               <Box w="100%">
                 <Heading size='xs' textTransform='uppercase'>

@@ -17,28 +17,20 @@ export default function Votos({votos, setVotos}: any) {
 
   return (
     <>
-      <Box mt="20px" w="100%">
-        <Box m="20px">
+      <Box w="100%">
+        <Box>
           <VStack
             spacing="30px"
             justify="center"
-            p={10}
             w={"100%"}
             align="stretch"
           >
             <Center>
-            <Heading size="lg" as="i" mb="20px" textColor="#1976D2">
+            <Heading size="lg" as="i" textColor="#1976D2" mt="10px">
                   Gráfico de intención de voto
             </Heading>
             </Center>
-            <WrapItem>
-              <Center w="100%">
-                <Box h="auto">
-                  <VotosChart votos={votos}/>
-                </Box>
-              </Center>
-            </WrapItem>
-            <WrapItem mt="15px">
+            <Box>
               <Center w="100%">
                 <HStack spacing="25px">
                   <Button
@@ -51,7 +43,14 @@ export default function Votos({votos, setVotos}: any) {
                   </Button>
                 </HStack>
               </Center>
-            </WrapItem>
+            </Box>
+            <Box>
+              <Center w="100%">
+                <Box h="auto">
+                  <VotosChart votos={votos}/>
+                </Box>
+              </Center>
+            </Box>
           </VStack>
         </Box>
       </Box>
