@@ -28,7 +28,7 @@ export default function VotoModalForm({ isOpen, onClose, votos, setVotos }: any)
   const { isOpen: isOpenEdit, onOpen: onOpenEdit, onClose: onCloseEdit } = useDisclosure();
   const cancelRef = useRef()
   const toast = useToast();
-  const DNI_REGEX = /^(\d{8})([A-Z])$/;
+  const DNI_REGEX = /^(\d{8})([A-z])$/;
 
   const validationSchema = Yup.object().shape({
     dni: Yup.string()
