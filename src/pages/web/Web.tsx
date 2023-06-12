@@ -10,7 +10,7 @@ import { VscGistSecret } from "react-icons/vsc";
 export default function Web() {
   return (
     <Center>
-      <Box padding="20px" maxWidth="850px">
+      <Box padding="20px" maxWidth="850px" minWidth="200px">
         <Card>
           <CardHeader>
             <Heading size='md'>Aspectos de interés</Heading>
