@@ -68,6 +68,18 @@ export default function Web() {
                     </WrapItem>
                     <WrapItem>
                       <Center w="150px" h="auto">
+                        <Link href="https://reactrouter.com/en/main" isExternal>
+                          <Tooltip label='React-Router' placement='auto'>
+                          <Image
+                            src="https://reactrouter.com/_brand/react-router-mark-color.png"
+                            alt="ReactRouter"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
                         <Link href="https://mui.com/" isExternal>
                           <Tooltip label='MaterialUI' placement='auto'>
                           <Image
@@ -141,6 +153,30 @@ export default function Web() {
                           <Image
                             src="https://vitejs.dev/logo-with-shadow.png"
                             alt="Vite"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://vercel.com/" isExternal>
+                          <Tooltip label='Vercel' placement='auto'>
+                          <Image
+                            src="https://images.ctfassets.net/c63hsprlvlya/7otp3Ofpdr8sCedYnSewGn/da3393cae2fdc7f3cedca1f0c1b46fc1/logo-vercel-svgrepo-com.svg"
+                            alt="Vercel"
+                          />
+                          </Tooltip>
+                        </Link>
+                      </Center>
+                    </WrapItem>
+                    <WrapItem>
+                      <Center w="150px" h="auto">
+                        <Link href="https://railway.app/" isExternal>
+                          <Tooltip label='Railway' placement='auto'>
+                          <Image
+                            src="https://railway.app/brand/logo-dark.svg"
+                            alt="Railway"
                           />
                           </Tooltip>
                         </Link>
