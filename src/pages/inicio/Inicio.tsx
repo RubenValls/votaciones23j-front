@@ -46,7 +46,7 @@ export default function Inicio({ votos, partidos }: any) {
           </VStack>
         </Center>
       </Box>
-      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5" borderTop="1px" borderBottom="1px">
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5">
         <Center>
           <Heading as="i">
             ¿Qué partidos políticos se presentan a las elecciones del 23J?
@@ -58,7 +58,7 @@ export default function Inicio({ votos, partidos }: any) {
           <LogosPartidos partidos={partidos}/>
         </Center>
       </Box>
-      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5" borderTop="1px" borderBottom="1px">
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5">
         <Center>
           <Heading as="i">
             Información sobre la web

@@ -5,7 +5,6 @@ import {
   HStack,
   Heading,
   VStack,
-  WrapItem,
   useDisclosure,
 } from "@chakra-ui/react";
 import { AiOutlineArrowRight } from "react-icons/ai";
