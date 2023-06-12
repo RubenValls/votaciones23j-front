@@ -19,3 +19,16 @@
     transform: scale(1);
     transition: 1s;
 }
+
+.MuiPaper-root{
+    background-color: #feebc8a5 !important;
+    color: black;
+}
+
+.MuiContainer-root{
+    color: black;
+}
+
+.MuiButton-text{
+    color: black !important;
+}

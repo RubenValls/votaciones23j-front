@@ -26,7 +26,7 @@ export default function Votos({votos, setVotos}: any) {
             align="stretch"
           >
             <Center>
-            <Heading size="lg" as="i" textColor="#1976D2" mt="10px">
+            <Heading size="lg" as="i" mt="10px">
                   Gráfico de intención de voto
             </Heading>
             </Center>
@@ -35,7 +35,7 @@ export default function Votos({votos, setVotos}: any) {
                 <HStack spacing="25px">
                   <Button
                     rightIcon={<AiOutlineArrowRight />}
-                    colorScheme="blue"
+                    colorScheme="orange"
                     variant="outline"
                     onClick={onOpen}
                   >

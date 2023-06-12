@@ -26,7 +26,7 @@ export default function Inicio({ votos, partidos }: any) {
 
   return (
     <>
-      <Box mt="20px" p={10} w="100%" textAlign="center" textColor="#1976D2">
+      <Box mt="20px" p={10} w="100%" textAlign="center">
         <Center>
           <VStack>
             <Heading>Participación actual:</Heading>
@@ -36,7 +36,7 @@ export default function Inicio({ votos, partidos }: any) {
             <Button
               rightIcon={<AiOutlineArrowRight />}
               onClick={() => navigate("/votos")}
-              colorScheme="twitter"
+              colorScheme="orange"
               size="lg"
               variant="outline"
               mt="5px"
@@ -46,7 +46,7 @@ export default function Inicio({ votos, partidos }: any) {
           </VStack>
         </Center>
       </Box>
-      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#1976D2" textColor="white">
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5" borderTop="1px" borderBottom="1px">
         <Center>
           <Heading as="i">
             ¿Qué partidos políticos se presentan a las elecciones del 23J?
@@ -58,7 +58,7 @@ export default function Inicio({ votos, partidos }: any) {
           <LogosPartidos partidos={partidos}/>
         </Center>
       </Box>
-      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#1976D2" textColor="white">
+      <Box mt="15px" p={10} w="100%" textAlign="center" backgroundColor="#feebc8a5" borderTop="1px" borderBottom="1px">
         <Center>
           <Heading as="i">
             Información sobre la web
@@ -76,19 +76,19 @@ export default function Inicio({ votos, partidos }: any) {
             <Center w="auto" h="100%" ml="20px">
               <List spacing={3} textColor="#22324C">
                 <ListItem>
-                  <ListIcon as={BsFileBarGraph} color="blue.500" />
+                  <ListIcon as={BsFileBarGraph} color="orange" />
                     Esta web tiene como objetivo realizar una encuesta de intención de voto y conocer la realidad social.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={VscGistSecret} color="blue.500" />
+                  <ListIcon as={VscGistSecret} color="orange" />
                     La intención de voto siempre permanecerá anómina, no se compartirá ningún dato personal con terceros.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={SlEnvolopeLetter} color="blue.500" />
+                  <ListIcon as={SlEnvolopeLetter} color="orange" />
                   Ejercer el derecho a voto es esencial y, por ello, se invita a toda la ciudadania a participar de las elecciones del 23J.
                 </ListItem>
                 <ListItem>
-                  <ListIcon as={GiArtificialHive} color="blue.500" />
+                  <ListIcon as={GiArtificialHive} color="orange" />
                   Toda la información sobre los partidos se ha realizado con el uso de IA de la manera más objetiva posible.
                 </ListItem>
               </List>
@@ -100,7 +100,7 @@ export default function Inicio({ votos, partidos }: any) {
             <Button
               rightIcon={<AiOutlineArrowRight />}
               onClick={() => navigate("/votos")}
-              colorScheme="twitter"
+              colorScheme="orange"
               variant="outline"
               size="lg"
             >

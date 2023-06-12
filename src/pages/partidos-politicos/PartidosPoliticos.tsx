@@ -48,7 +48,7 @@ export default function PartidosPoliticos({partidos}: any) {
                               <Button
                                 rightIcon={<HiDownload />}
                                 onClick={() => onFailure(toast, "Programa electoral no disponible, vuelve a intentarlo próximamente")}
-                                colorScheme="twitter"
+                                colorScheme="orange"
                                 size={window.innerWidth > 450 ? "lg" : "sm"}
                                 variant="outline"
                                 mt="25px"
