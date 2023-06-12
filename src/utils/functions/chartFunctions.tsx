@@ -25,6 +25,16 @@ export const getVotos = (votos: any) => {
   return votosPorPartido;
 };
 
+export const getBloquesVotos = (votos: any) => {
+  const votosPorBloque: any = [0,0];
+
+  votos.forEach((voto: any) => {
+    voto?.attributes?.voto.toUpperCase() === 'PP' || voto?.attributes?.voto.toUpperCase() === 'VOX' ? votosPorBloque[0] += 1 : votosPorBloque[1] += 1;
+  });
+
+  return votosPorBloque;
+};
+
 export const getBackgroundColor = (partido: any) => {
   switch (partido) {
     case "PP":

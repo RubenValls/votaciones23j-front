@@ -10,6 +10,7 @@ import {
 import { AiOutlineArrowRight } from "react-icons/ai";
 import VotoModalForm from "../../components/VotoModalForm";
 import VotosChart from "../../components/VotosChart";
+import VotosPactosChart from "../../components/VotosPactosChart";
 
 export default function Votos({votos, setVotos}: any) {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -47,6 +48,18 @@ export default function Votos({votos, setVotos}: any) {
               <Center w="100%">
                 <Box h="auto">
                   <VotosChart votos={votos}/>
+                </Box>
+              </Center>
+            </Box>
+            <Center>
+            <Heading size="lg" as="i" mt="10px">
+                  Gráfico de posibles pactos
+            </Heading>
+            </Center>
+            <Box mb='50px'>
+              <Center w="100%">
+                <Box h="auto">
+                  <VotosPactosChart votos={votos}/>
                 </Box>
               </Center>
             </Box>
