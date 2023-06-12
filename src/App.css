@@ -25,6 +25,10 @@
     color: black;
 }
 
+.MuiMenu-list{
+    background-color: #feebc8 !important;
+}
+
 .MuiContainer-root{
     background-color: #feebc8a5 !important;
     color: black;

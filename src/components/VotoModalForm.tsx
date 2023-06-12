@@ -121,7 +121,7 @@ export default function VotoModalForm({ isOpen, onClose, votos, setVotos }: any)
                   </FormControl>
                 </ModalBody>
                 <ModalFooter>
-                  <Button type="submit" colorScheme="blue" mr={3}>
+                  <Button type="submit" colorScheme="orange" variant="outline" mr={3}>
                     Enviar voto
                   </Button>
                 </ModalFooter>

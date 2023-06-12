@@ -25,23 +25,23 @@ export default function Web() {
                 <Box mt='10px'>
                     <List spacing='15px' textAlign='start'>
                       <ListItem>
-                        <ListIcon as={BiCodeAlt} color="blue.500" />
+                        <ListIcon as={BiCodeAlt} color="orange" />
                           El objetivo de la web es poner en práctica conocimientos tecnológicos relacionados con Front y Back End. 
                       </ListItem>
                       <ListItem>
-                        <ListIcon as={FaRegEye} color="blue.500" />
+                        <ListIcon as={FaRegEye} color="orange" />
                           La finalidad de la web es observar la intención de voto de la sociedad desde un punto de vista objetivo.
                       </ListItem>
                       <ListItem>
-                        <ListIcon as={VscGistSecret} color="blue.500" />
+                        <ListIcon as={VscGistSecret} color="orange" />
                         Cualquier tipo de información aportada permanecerá privada y jamás será compartida a terceros.
                       </ListItem>
                       <ListItem>
-                        <ListIcon as={BiStats} color="blue.500" />
+                        <ListIcon as={BiStats} color="orange" />
                         Los partidos corresponden a aquellos con más % de votos en las pasadas elecciones generales del 2019.
                       </ListItem>
                       <ListItem>
-                        <ListIcon as={BiMessageAltDots} color="blue.500" />
+                        <ListIcon as={BiMessageAltDots} color="orange" />
                         Para cualquier propuesta de mejora, al final de esta página se encuentran los datos de contacto.
                       </ListItem>
                     </List>

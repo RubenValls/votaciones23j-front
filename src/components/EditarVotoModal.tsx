@@ -33,7 +33,7 @@ export default function EditarVotoModal({ isOpen, onCloseEdit, onClose, cancelRe
               <Button ref={cancelRef} onClick={onCloseEdit}>
                 Cancelar
               </Button>
-              <Button colorScheme="twitter" onClick={() => tryUpdateVoto(values, onCloseEdit, onClose, toast, votos, setVotos)} ml={3}>
+              <Button colorScheme="orange" variant="outline" onClick={() => tryUpdateVoto(values, onCloseEdit, onClose, toast, votos, setVotos)} ml={3}>
                 Actualizar voto
               </Button>
             </AlertDialogFooter>
