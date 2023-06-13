@@ -1,4 +1,4 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap, Spinner } from "@chakra-ui/react";
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
