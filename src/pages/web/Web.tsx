@@ -25,7 +25,6 @@ import { MdAlternateEmail } from "react-icons/md";
 import { BiCodeAlt, BiMessageAltDots, BiStats } from "react-icons/bi";
 import { FaRegEye } from "react-icons/fa";
 import { VscGistSecret } from "react-icons/vsc";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default function Web() {
   return (
