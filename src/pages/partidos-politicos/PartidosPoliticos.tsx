@@ -1,7 +1,8 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap } from "@chakra-ui/react";
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap, Spinner } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
+import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default function PartidosPoliticos({partidos}: any) {
   const location = useLocation();
@@ -46,7 +47,19 @@ export default function PartidosPoliticos({partidos}: any) {
                               </Text>
                               <Divider mt="25px"/>
                               <Box mt="10px">
-                                  
+                                  <TwitterTimelineEmbed
+                                    sourceType="profile"
+                                    screenName={partido?.attributes?.twitter}
+                                    options={{height: 500}}
+                                    placeholder={<Spinner
+                                      mt="15px"
+                                      thickness='4px'
+                                      speed='0.65s'
+                                      emptyColor='gray.200'
+                                      color='orange'
+                                      size='xl'
+                                    />}
+                                  />
                               </Box>
                               <Divider mt="25px"/>
                               <Button
