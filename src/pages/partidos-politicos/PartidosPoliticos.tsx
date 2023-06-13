@@ -51,14 +51,7 @@ export default function PartidosPoliticos({partidos}: any) {
                                     sourceType="profile"
                                     screenName={partido?.attributes?.twitter}
                                     options={{height: 500}}
-                                    placeholder={<Spinner
-                                      mt="15px"
-                                      thickness='4px'
-                                      speed='0.65s'
-                                      emptyColor='gray.200'
-                                      color='orange'
-                                      size='xl'
-                                    />}
+                                    
                                   />
                               </Box>
                               <Divider mt="25px"/>
