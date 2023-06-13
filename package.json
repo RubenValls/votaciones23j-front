@@ -26,6 +26,7 @@
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.11.2",
     "react-twitter-embed": "^4.0.4",
+    "react-twitter-widgets": "^1.11.0",
     "yup": "^1.2.0"
   },
   "devDependencies": {
