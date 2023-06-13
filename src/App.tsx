@@ -1,7 +1,7 @@
 // import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Inicio from "./pages/inicio/Inicio";
 import Votos from "./pages/votos/Votos";
 import Web from "./pages/web/Web";
@@ -14,6 +14,12 @@ import { getPartidos } from "./utils/middlewares/partidosMiddleware";
 function App() {
   const [votos, setVotos] = useState<JSON[]>([]);
   const [partidos, setPartidos] = useState<JSON[]>([]);
+  const { pathname } = useLocation();
+
+  // Automatically scrolls to top whenever pathname changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   useEffect(() => {
 
