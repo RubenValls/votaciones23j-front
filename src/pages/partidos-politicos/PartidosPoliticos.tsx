@@ -2,7 +2,7 @@ import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, But
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
+import TwitterTimelineEmbed from "react-twitter-embed/dist/components/TwitterTimelineEmbed";
 
 export default function PartidosPoliticos({partidos}: any) {
   const location = useLocation();
