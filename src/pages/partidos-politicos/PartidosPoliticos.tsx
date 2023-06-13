@@ -1,10 +1,12 @@
-import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap } from "@chakra-ui/react";
+import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, Button, useToast, Divider, Wrap, Spinner } from "@chakra-ui/react";
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
 import { Timeline } from "react-twitter-widgets";
+import { useState } from "react";
 
 export default function PartidosPoliticos({partidos}: any) {
+  const [twitter, setTwitter] = useState<boolean>(false);
   const location = useLocation();
   const toast = useToast();
   
@@ -47,7 +49,18 @@ export default function PartidosPoliticos({partidos}: any) {
                               </Text>
                               <Divider mt="25px"/>
                               <Box mt="10px">
+                                {!twitter
+                                  && <Spinner
+                                    mt='15px'
+                                    thickness='4px'
+                                    speed='0.65s'
+                                    emptyColor='gray.200'
+                                    color='orange'
+                                    size='xl'
+                                  />
+                                }
                                 <Timeline
+                                  onLoad={() => setTwitter(true)}
                                   dataSource={{
                                     sourceType: 'profile',
                                     screenName: `${partido?.attributes?.twitter}`
