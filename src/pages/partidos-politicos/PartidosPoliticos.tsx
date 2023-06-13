@@ -2,7 +2,6 @@ import { Box, Tab, TabList, TabPanel, TabPanels, Tabs, Image, Heading, Text, But
 import { HiDownload } from "react-icons/hi";
 import { useLocation } from "react-router-dom";
 import { onFailure } from "../../utils/functions/toastFunctions";
-import { TwitterTimelineEmbed } from "react-twitter-embed";
 
 export default function PartidosPoliticos({partidos}: any) {
   const location = useLocation();
@@ -47,12 +46,7 @@ export default function PartidosPoliticos({partidos}: any) {
                               </Text>
                               <Divider mt="25px"/>
                               <Box mt="10px">
-                                  <TwitterTimelineEmbed
-                                    sourceType="profile"
-                                    screenName={partido?.attributes?.twitter}
-                                    options={{height: 500}}
-                                    
-                                  />
+                                  
                               </Box>
                               <Divider mt="25px"/>
                               <Button
