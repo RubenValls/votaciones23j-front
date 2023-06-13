@@ -26,10 +26,14 @@ export const getVotos = (votos: any) => {
 };
 
 export const getBloquesVotos = (votos: any) => {
-  const votosPorBloque: any = [0,0];
+  const votosPorBloque: any = [0, 0, 0];
 
   votos.forEach((voto: any) => {
-    voto?.attributes?.voto.toUpperCase() === 'PP' || voto?.attributes?.voto.toUpperCase() === 'VOX' ? votosPorBloque[0] += 1 : votosPorBloque[1] += 1;
+    voto?.attributes?.voto.toUpperCase() === 'PP' || voto?.attributes?.voto.toUpperCase() === 'VOX' 
+      ? votosPorBloque[0] += 1 
+      : (voto?.attributes?.voto.toUpperCase() === 'ABSTENCION')
+        ? votosPorBloque[2] += 1
+        : votosPorBloque[1] += 1
   });
 
   return votosPorBloque;
