@@ -11,8 +11,14 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 import VotoModalForm from "../../components/VotoModalForm";
 import VotosChart from "../../components/VotosChart";
 import VotosPactosChart from "../../components/VotosPactosChart";
+import { Dispatch, SetStateAction } from "react";
 
-export default function Votos({votos, setVotos}: any) {
+type VotosProps = {
+  votos: JSON[]
+  setVotos: Dispatch<SetStateAction<JSON[]>>
+}
+
+export default function Votos({votos, setVotos}: VotosProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
